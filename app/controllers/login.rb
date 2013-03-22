@@ -1,5 +1,5 @@
 post '/login' do  
-  @user = User.authenticate(params[:user][:username], params[:user][:password])
+  @user = User.authenticate(params[:user][:username].downcase, params[:user][:password])
   
   if @user
     session[:user_id] = @user.id
