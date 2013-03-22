@@ -7,7 +7,7 @@ post '/signup' do
   if user.save
     user.albums << Album.create(:name => "Default Album")
     session[:user_id] = user.id
-    redirect "/users/#{user.username}/albums" 
+    redirect "/users/#{user.username}" 
   end
   erb :signup
 end
