@@ -14,7 +14,7 @@ gem 'activesupport'
 gem 'activerecord'
 gem 'carrierwave'
 gem 'rmagick'
-
+gem 'bcrypt-ruby'
 gem 'rake'
 
 group :test do

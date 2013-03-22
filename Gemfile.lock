@@ -14,6 +14,7 @@ GEM
       multi_json (~> 1.0)
     arel (3.0.2)
     backports (2.6.1)
+    bcrypt-ruby (3.0.1)
     builder (3.0.4)
     carrierwave (0.8.0)
       activemodel (>= 3.2.0)
@@ -32,6 +33,7 @@ GEM
     rack-test (0.6.2)
       rack (>= 1.0)
     rake (10.0.3)
+    rmagick (2.13.2)
     rspec (2.12.0)
       rspec-core (~> 2.12.0)
       rspec-expectations (~> 2.12.0)
@@ -64,10 +66,12 @@ PLATFORMS
 DEPENDENCIES
   activerecord
   activesupport
+  bcrypt-ruby
   carrierwave
   faker
   pg
   rake
+  rmagick
   rspec
   sinatra
   sinatra-contrib

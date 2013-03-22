@@ -1,0 +1,14 @@
+<!-- get '/albums/album_id/photos' -->
+
+<h2>@album.name</h2>
+
+  <article class = "single_photo">
+    <h3> <%= @photo.title %> </h3>
+    <a href = "/photos/album_id">
+      
+      <!-- Custom method in model...use uploader process method -->
+      <img src = "/photos/album_id/<%= photo.id %>"/>
+    </a>
+    <p><%= @photo.description %> </p>
+  </article>
+

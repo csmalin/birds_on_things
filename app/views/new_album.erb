@@ -1,0 +1,13 @@
+  <form action="/users/<%= @user.username %>/albums/new_album" method="post" class = "new_album">
+
+    <fieldset class="login">
+      <legend>New Album</legend>
+
+      <input type="text"   name="album[name]"  id = "album_name" placeholder = "Album Name"><br>
+      
+      <input type="text"   name="album[description]"  id = "album_description" placeholder = "Description"><br>
+      
+      <input type="submit" name="Add Album" value = "Add Album" id="add_album">
+
+    </fieldset>
+  </form>

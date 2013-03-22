@@ -1,0 +1,21 @@
+<!-- get '/users/user_name/albums' -->
+
+<h2>All Albums</h2>
+ <a href = "/users/<%= @user.username %>/albums/new_album">New Album</a>
+<% @albums.each do |album| %>
+
+  <article class = "all_albums">
+    <h3> <%= album.name %> </h3>
+
+    <!-- Links to all photos in single album -->
+    <a href = "/albums/album_id">
+
+      <!-- Custom method in model...use uploader process method -->
+      <!--  <img src = "/albums/album_id/<%= album.photos.first %>"/> -->
+    </a>
+   
+    <p><%= album.description %> </p>
+  </article>
+
+<% end %>
+
