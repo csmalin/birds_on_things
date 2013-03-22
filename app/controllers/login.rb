@@ -7,7 +7,7 @@ post '/login' do
     redirect '/'
   end
 
-  redirect "/users/#{@user.username}"
+  redirect "/#{@user.username}"
 
 end
 

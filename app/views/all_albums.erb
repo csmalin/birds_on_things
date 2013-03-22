@@ -3,20 +3,15 @@
 
 <% @albums.each do |album| %>
 <article class = "all_albums">
-  <h3>
+  <a href=<%= "#{@user.username + "/" + album.url}" %> ><h3>
     <%= album.name %></h3>
-
-  <!-- Links to all photos in single album -->
-  <a href = "/albums/album_id"></a>
-
-    <!-- Custom method in model...use uploader process method -->
-    <!--  <img src = "/albums/album_id/<%= album.photos.first %>"/> -->
+  </a>
   <% if album.description != nil %>
   <p>Description: <%= album.description %></p>
   <% end %>
 
   <% album.photos.each do |photo| %>
-  <a href=<%= "#{album.name}/" %>><img src=<%= photo.image %>></a>
+  <a href=<%= "#{@user.username + "/" + album.url+ "/" + photo.url}" %>><img src=<%= photo.image %>></a>
   <% end %>
 
 
