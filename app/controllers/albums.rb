@@ -16,9 +16,11 @@ end
 post '/new_album' do
   if session[:user_id]
     @user = User.find(session[:user_id])
-    @user.albums.create(:name => params[:album][:name], :description => params[:album][:description])
+    album = underscore(params[:album][:name])
+    @user.albums.create(:name => params[:album][:name], :url => params[:album][:name].gsub(/ /, '_').downcase, :description => params[:album][:description])
+    redirect "/users/#{@user.username}/albums"
   end
-  redirect "/users/#{params[:username]}/albums"
+  redirect '/'
 end
 
 get '/albums/:album_id/photos' do

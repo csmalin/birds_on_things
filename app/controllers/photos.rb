@@ -25,3 +25,5 @@ post '/upload' do
   end
   redirect "/users/#{@user.username}/albums"
 end
+
+

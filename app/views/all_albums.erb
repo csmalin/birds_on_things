@@ -11,11 +11,12 @@
 
     <!-- Custom method in model...use uploader process method -->
     <!--  <img src = "/albums/album_id/<%= album.photos.first %>"/> -->
-
+  <% if album.description != nil %>
   <p>Description: <%= album.description %></p>
+  <% end %>
 
   <% album.photos.each do |photo| %>
-    <img src=<%= photo.image %>>
+  <a href=<%= "#{album.name}/" %>><img src=<%= photo.image %>></a>
   <% end %>
 
 
