@@ -1,5 +1,5 @@
 <h2>All Albums</h2>
-<a href = "/users/<%= @user.username %>/albums/new_album">New Album</a>
+
 
 <% @albums.each do |album| %>
 <article class = "all_albums">
@@ -12,7 +12,13 @@
     <!-- Custom method in model...use uploader process method -->
     <!--  <img src = "/albums/album_id/<%= album.photos.first %>"/> -->
 
-  <p><%= album.description %></p>
+  <p>Description: <%= album.description %></p>
+
+  <% album.photos.each do |photo| %>
+    <img src=<%= photo.image %>>
+  <% end %>
+
+
 </article>
 
 <% end %>

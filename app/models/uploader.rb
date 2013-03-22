@@ -4,6 +4,6 @@ class Uploader < CarrierWave::Uploader::Base
   # Remember to create a migration!
 
   def store_dir
-    '../public/uploads'
+    'public/uploads'
   end
 end

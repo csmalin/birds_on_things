@@ -1,15 +1,17 @@
+<form action="/upload" method="post" class = "login" enctype="multipart/form-data">
+  <fieldset class="login">
+    <legend>Upload A Photo</legend>
 
-  <form action="/upload" method="post" enctype="multipart/form-data">
-        
-
-    <fieldset class="upload">
-      <legend>Upload A Photo</legend>
-
-      <input type="text"   name="path" placeholder = "Name"><br>
-      <textarea name = "description" placeholder = "Description"></textarea>
-      <input type="text"   name="path" placeholder = "File Path"><br>            
-      
-      <input type="file" name="image" />
-      <input type="submit" name="upload" value = "Upload!" id="upload">
-    </fieldset>
-  </form>
+    <input type="text"   name="image[title]" id="title" placeholder = "Title">
+    <br>
+    <input type="text"   name="image[description]"  id="username" placeholder="Description">
+    <br>
+    <input type="file" name="image[image]" />
+    <br>
+    <select name="album_id" > 
+    <% @user.albums.each do |album| %>
+    <option value="<%= album.id %>"><%= album.name %></option>
+    <% end %>
+  </select><br><br>
+    <input type="submit" name="upload" value = "Upload!" id="upload"></fieldset>
+</form>

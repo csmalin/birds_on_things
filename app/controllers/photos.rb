@@ -7,16 +7,21 @@ get '/albums/:album_id/:photo_id' do
 end
 
 get '/upload' do
-  erb :upload
+  if session[:user_id]
+    @user = User.find(session[:user_id])
+    erb :upload
+  else
+    redirect "/"
+  end
 end
 
 post '/upload' do
   if session[:user_id]
     @user = User.find(session[:user_id])
-    
-    photo = Photo.new(:title => "a photo", :description => "some description", :image => params[:image])
+    photo = Photo.new(params[:image])
     photo.save!
-
+    @user.albums.find(params[:album_id]).photos << photo
+    @user.save
   end
-  redirect "/users/#{params[:username]}/albums"
+  redirect "/users/#{@user.username}/albums"
 end
